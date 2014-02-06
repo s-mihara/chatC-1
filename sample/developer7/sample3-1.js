@@ -13,7 +13,9 @@ var query;
 function onRequest(req, res) {
   console.log('onRequest!!');
 
-  //###############
+  ejsData = fs.readFileSync('./sample3-2.ejs','UTF-8');
+  var str = 'あいうえお';
+  data = ejs.render(ejsData,{label : str});
 
   res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'});
   res.end(data);
