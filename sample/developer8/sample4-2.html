@@ -16,6 +16,8 @@
       var rc = prompt(data);
 
       //###############
+      //evwnt2イベントを送信
+      socket.emit("event2",rc);
     });
   });
 </script>

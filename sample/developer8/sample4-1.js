@@ -28,6 +28,7 @@ io.sockets.on('connection', function (socket) {
   io.sockets.emit('event1','接続しました');
   
   //###############
+  //event2イベントを受信
 });
 
 server.listen(settings.port);
