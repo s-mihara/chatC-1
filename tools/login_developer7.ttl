@@ -1,0 +1,21 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+username = 'developer7'
+hostname = '54.199.159.7'
+passwdfile = '.\autologin.dat';
+hostname2 = '54.199.159.7'
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+msg = 'Enter password for user '
+strconcat msg username
+passwdkey = username
+strconcat passwdkey '@'
+strconcat passwdkey hostname
+getpassword passwdfile passwdkey password
+
+msg = hostname
+strconcat msg ':22 /ssh /auth=password /user='
+strconcat msg username
+strconcat msg ' /passwd='
+strconcat msg password
+
+connect msg
