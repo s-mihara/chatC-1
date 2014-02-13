@@ -26,8 +26,12 @@ io.sockets.on('connection', function (socket) {
 
   // event1イベントを送信（全クライアント）
   io.sockets.emit('event1','接続しました');
-  
-  //###############
+
+  socket.on('event2',function(data){
+    console.log('入力値：'+data);
+  });
+
+
 });
 
 server.listen(settings.port);

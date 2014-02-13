@@ -24,7 +24,7 @@ function onRequest(req, res) {
 	  showPage(req, res);
 
 	} else {
-	
+
 		console.log('POST!!');
 	  var query = setQeuryString(req, res);
 
@@ -59,7 +59,8 @@ function showPage(req, res) {
 		// チャットルームを開く
 		case '/room':
 			require('./chatRoom.js');
-			data = fs.readFileSync('./chatRoom.ejs', 'UTF-8');
+			ejsData = fs.readFileSync('./chatRoom.ejs', 'UTF-8');
+			data = ejs.render(ejsData,{name : query.userName});
 			res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'});
 			res.end(data);
 			break;
