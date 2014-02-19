@@ -29,9 +29,11 @@ io.sockets.on('connection', function (socket) {
 
   socket.on('event2',function(data){
     console.log('入力値：'+data);
+    //event3
+    socket.emit('event3','自分が入力:'+data);
+    //event4
+    socket.broadcast.emit('event4','他ブラウザで入力:'+data);
   });
-
-
 });
 
 server.listen(settings.port);

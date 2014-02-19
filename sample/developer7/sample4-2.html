@@ -6,7 +6,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   $(function () {
-  
+
     // socket.ioの処理開始
     var socket = io.connect();
 
@@ -15,7 +15,8 @@
 
       var rc = prompt(data);
 
-      //###############
+      //event2
+      socket.emit("event2",rc);
     });
   });
 </script>

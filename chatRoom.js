@@ -7,3 +7,11 @@ var settings = require(path.join(path.sep, paths[1], paths[2], paths[3], 'settin
 var server = require.main.exports.server;
 
 var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function (socket) {
+
+  socket.on('disconnect',function (){
+    socket.broadcast.emit('taishutu');
+  });
+
+});
