@@ -14,9 +14,9 @@ io.sockets.on('connection', function (socket) {
   // 入室
   socket.broadcast.emit('nyushutu',query.userName);
   // 退室
-  socket.on('out',function (name){
+  socket.on('out',function (){
     // console.log("ok!");
-    socket.broadcast.emit('taishutu',name);
+    socket.broadcast.emit('taishutu',query.userName);
     //console.log("ok");
   });
 

@@ -17,8 +17,6 @@
     });
      socket.on('nyushutu',function (data){
       $('#disconnectMsg').append("<li>"+ data +"さんが入室しました</li>");
-     
-      //alert(data);
     });
      //  退室
     socket.on('taishutu',function (data){
