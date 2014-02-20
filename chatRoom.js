@@ -9,9 +9,11 @@ var server = require.main.exports.server;
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
-
-  socket.on('disconnect',function (){
+    console.log("ok");
+  socket.on('out',function (name){
+    // console.log("ok!");
     socket.broadcast.emit('taishutu');
+    //console.log("ok");
   });
 
 });
