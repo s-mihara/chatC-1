@@ -9,13 +9,14 @@ var server = require.main.exports.server;
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
-    console.log("ok");
-    var query = require.main.exports.query;
-    socket.broadcast.emit('nyushutu',query.userName);
+
+  var query = require.main.exports.query;
+  // 入室
+  socket.broadcast.emit('nyushutu',query.userName);
+  // 退室
   socket.on('out',function (name){
     // console.log("ok!");
-
-    socket.broadcast.emit('taishutu');
+    socket.broadcast.emit('taishutu',name);
     //console.log("ok");
   });
 

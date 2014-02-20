@@ -9,22 +9,20 @@
 <script src="/socket.io/socket.io.js"></script>
 
 <script type="text/javascript" charset="utf-8" >
-  //id属性を使う場合
   $(function () {
     var socket = io.connect();
-    $("#logout").click (function (){
-      //alert("aaa");
-      socket.emit('out',"name");
+    $("#logout").click (function (name){
+      //alert(name.value);
+      socket.emit('out',query.name);
     });
      socket.on('nyushutu',function (data){
       // var $li = &('<li>',{text:name +"さんが退出しました"});
       // $('#disconnectMsg').append($li);
       alert(data);
     });
-    socket.on('taishutu',function (){
-      // var $li = &('<li>',{text:name +"さんが退出しました"});
-      // $('#disconnectMsg').append($li);
-      alert("OK!");
+    socket.on('taishutu',function (name){
+      $('#disconnectMsg').append("<li>"+name +"さんが退出しました</li>");
+      //alert(name);
     });
    });
 </script>
@@ -58,11 +56,7 @@
 <!--退出ボタン-->
 <form method="post" action="/">
   <div class="row">
-    <!--  onClickを使う場合
-    <input type="submit" value="退出する" class="btn btn-info" onclick="disconnect()">
-    -->
-    <!-- id属性を使う場合 -->
-    <input type="button" value="退出する" class="btn btn-info" id="logout">
+    <input type="submit" value="退出する" class="btn btn-info" id="logout">
   </div>
 </form>
 </script>
