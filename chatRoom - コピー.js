@@ -8,15 +8,14 @@ var server = require.main.exports.server;
 
 var io = require('socket.io').listen(server);
 
+console.log("hoge");
 io.sockets.on('connection', function (socket) {
-    console.log("ok");
-    var query = require.main.exports.query;
-    socket.broadcast.emit('nyushutu',query.userName);
-  socket.on('out',function (name){
-    // console.log("ok!");
-
-    socket.broadcast.emit('taishutu');
-    //console.log("ok");
-  });
+  console.log("hoge");
+ //  socket.on('disconnect',function (){
+ //    socket.broadcast.emit('taishutu');
+ //  });
+ // socket.on('connect',function(name){
+ // 	socket.broadcast.emit('nyushutu');
+ // }
 
 });
