@@ -13,15 +13,15 @@
     var socket = io.connect();
     $("#logout").click (function (name){
       //alert(name.value);
-      socket.emit('out',query.userName);
+      socket.emit('out',"abc");
     });
      socket.on('nyushutu',function (data){
       // var $li = &('<li>',{text:name +"さんが退出しました"});
       // $('#disconnectMsg').append($li);
       alert(data);
     });
-    socket.on('taishutu',function (name){
-      $('#disconnectMsg').append("<li>"+name +"さんが退出しました</li>");
+    socket.on('taishutu',function (data){
+      $('#disconnectMsg').append("<li>"+ data +"さんが退出しました</li>");
       //alert(name);
     });
    });
