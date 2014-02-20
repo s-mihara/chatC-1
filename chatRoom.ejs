@@ -20,8 +20,13 @@
       // $('#disconnectMsg').append($li);
       alert(data);
     });
+<<<<<<< HEAD
     socket.on('taishutu',function (data){
       $('#disconnectMsg').append("<li>"+ data +"さんが退出しました</li>");
+=======
+    socket.on('taishutu',function (name){
+      $('#disconnectMsg').append("<li>"+name +"さんが退出しました</li>");
+>>>>>>> 1e776ba94568894f3be026585c1e298181473838
       //alert(name);
     });
    });
