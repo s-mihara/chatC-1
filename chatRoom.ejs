@@ -12,8 +12,8 @@
   $(function () {
     var socket = io.connect();
     $("#logout").click (function (name){
-      alert(name.value);
-      socket.emit('out',name);
+      //alert(name.value);
+      socket.emit('out',query.name);
     });
     socket.on('taishutu',function (name){
       $('#disconnectMsg').append("<li>"+name +"さんが退出しました</li>");
