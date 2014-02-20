@@ -16,9 +16,9 @@
       socket.emit('out',"abc");
     });
      socket.on('nyushutu',function (data){
-      // var $li = &('<li>',{text:name +"さんが退出しました"});
-      // $('#disconnectMsg').append($li);
-      alert(data);
+      $('#disconnectMsg').append("<li>"+ data +"さんが入室しました</li>");
+     
+      //alert(data);
     });
      //  退室
     socket.on('taishutu',function (data){
